@@ -10,7 +10,7 @@ final as(
     number_of_orders
     from {{ ref('dim_customers') }}
     -- remove customers with no orders
-    where number_of_orders > 0
+    where number_of_orders > 1
     order by number_of_orders desc
 )
 
