@@ -4,7 +4,7 @@ final as(
     select 
     customer_id,
     number_of_orders
-    from {{ ref('customers') }}
+    from {{ ref('dim_customers') }}
 )
 
 select * from final
