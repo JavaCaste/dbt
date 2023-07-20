@@ -6,7 +6,7 @@ sources:
       database: raw
       schema: stripe
       tables:
-          - name: payments
+          - name: payment
             description: O
     - name: jaffle_shop
       description: jaffle_shop raw tables
