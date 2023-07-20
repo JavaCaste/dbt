@@ -34,10 +34,11 @@ models:
     marts:
       core:
         +database: analytics
-        +schema: jaffle
+        +schema: jafflee
         +materialized: table
     staging:
       jaffle_shop:
-        +schema: jaffle
+        +database: analytics
+        +schema: jafflee
         +materialized: view
 
