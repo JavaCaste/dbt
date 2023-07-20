@@ -1,5 +1,6 @@
 version: 2
 
+
 sources:
     - name: stripe
       description: stripe raw tables
@@ -8,6 +9,7 @@ sources:
       tables:
           - name: payment
             description: O
+            
     - name: jaffle_shop
       description: jaffle_shop raw tables
       database: raw
