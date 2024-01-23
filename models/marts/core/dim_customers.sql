@@ -33,5 +33,5 @@ final as (
 
 select 
 customer_id,
-{{fullq_name(first_name, last_name)}} 
+{{ fullq_name('first_name', 'last_name') }} as fullname
 from final
