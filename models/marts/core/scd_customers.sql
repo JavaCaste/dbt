@@ -1,3 +1,9 @@
+{{ config(
+  materialized='incremental',
+  unique_key='customer_history_sk',
+  tags = ["incremental_model"])
+}}
+
 with 
 
 customer_history as (
@@ -11,4 +17,7 @@ scd_customers as (
 )
 
 select * from scd_customers
-where record_end_time is null
+
+{% if is_incremental() %}
+where {{ dbt_utils.dateadd(day, 1, record_start_time  }} > {{current_date}}
+{% endif %}
