@@ -19,5 +19,5 @@ scd_customers as (
 select * from scd_customers
 
 {% if is_incremental() %}
-where {{ dbt_utils.dateadd(day, 1, record_start_time  }} > {{current_date}}
+where {{ dbt_utils.dateadd(day, 1, record_start_time) }} > {{current_date}}
 {% endif %}
