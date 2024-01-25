@@ -1,7 +1,13 @@
 version: 2
 
-
 sources:
+    - name: scd
+      description: scd dimension tables
+      database: scd
+      schema: dimensions
+      tables:
+          - name: customer_history
+
     - name: stripe
       description: stripe raw tables
       database: raw
