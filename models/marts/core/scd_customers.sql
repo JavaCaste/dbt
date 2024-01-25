@@ -16,7 +16,7 @@ scd_customers as (
     from customer_history
 )
 
-select * from scd_customers
+select * from scd_customers where record_end_time is null
 
 {% if is_incremental() %}
 where  record_start_time  > current_date - interval '1 day'
