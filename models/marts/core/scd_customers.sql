@@ -11,3 +11,4 @@ scd_customers as (
 )
 
 select * from scd_customers
+where record_end_time is null
