@@ -31,4 +31,7 @@ final as (
     left join customer_orders using (customer_id)
 )
 
-select * from final
+select 
+customer_id,
+{{ fullq_name('first_name', 'last_name') }} as fullname
+from final
