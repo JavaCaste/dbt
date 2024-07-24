@@ -31,7 +31,7 @@ final as (
     left join customer_orders using (customer_id)
 ),
 
-final_w_surrkey as (
+final_con_surrogatekey as (
     
     select
         {{ dbt_utils.generate_surrogate_key([
@@ -43,4 +43,4 @@ final_w_surrkey as (
         *
     from final
 )
-select * from final_w_surrkey
+select * from final_con_surrogatekey
