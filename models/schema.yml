@@ -12,10 +12,36 @@ models:
       - name: first_order_date
         description: NULL when a customer has not placed an order yet.
 
+  - name: dim_customers_surrokey
+    description: Check Surrogate Key uniqueness
+    columns:
+      - name: unique_key
+        description: Surrogate key
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_orders
+    description: One record per order_id
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
   - name: stg_customers
     description: This model cleans up customer data
     columns:
       - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_payments
+    columns:
+      - name: payment_id
         description: Primary key
         tests:
           - unique
